@@ -72,9 +72,20 @@ cabal run
 
 ### Test project
 
+For running tests a single time:
+
 ``` sh
 cabal run
 ```
+
+For TDD (Test-driven development) based workflow:
+
+``` sh
+tdd
+```
+
+This uses a small wrapper around `ghcid` which do continuous recompilation and
+retesting for rapid feedback whenever something changes.
 
 ## Updates
 

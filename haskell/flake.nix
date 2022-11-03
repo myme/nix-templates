@@ -24,6 +24,7 @@
         defaultPackage = pkgs.${name};
 
         devShell = pkgs.callPackage ./shell.nix {
+          inherit name;
           package = pkgs.haskellPackages.${name};
         };
       });
