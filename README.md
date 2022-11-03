@@ -6,6 +6,8 @@ Here be `nix` templates for various things.
 
 A "complete" Haskell setup with basic toolchain, `hls`, other 🍬.
 
+![Nix Haskell example](./images/nix-haskell-template.gif)
+
 ## [NodeJS](./nodejs)
 
 A very basic `nodejs` based setup with `npm`.
