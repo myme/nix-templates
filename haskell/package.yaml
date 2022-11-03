@@ -1,0 +1,43 @@
+name: hello
+version: '0.1.0.0'
+
+executables:
+  hello:
+    main: Main.hs
+    source-dirs:
+    - app
+    dependencies:
+    - base
+    - hello
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+
+library:
+  source-dirs:
+  - src
+  dependencies:
+  - base
+
+tests:
+  hello-test:
+    main: Main.hs
+    source-dirs:
+    - test
+    dependencies:
+    - base
+    - hello
+    - hspec
+    - QuickCheck
+
+default-extensions:
+  - GeneralizedNewtypeDeriving
+  - LambdaCase
+  - NamedFieldPuns
+  - OverloadedStrings
+  - TupleSections
+
+ghc-options:
+  - -Wall
+  - -Werror
