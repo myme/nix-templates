@@ -4,7 +4,7 @@ Here be `nix` templates for various things.
 
 ## [Haskell](./haskell)
 
-A "complete" Haskell setup with basic toolchain, `hls`, other 🍬.
+A "complete" Haskell setup with basic toolchain, `hls`, and other goodies 🍬.
 
 ![Nix Haskell example](./images/nix-haskell-template.gif)
 
