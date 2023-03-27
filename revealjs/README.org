@@ -1,0 +1,33 @@
+#+title: Reveal.JS presentation Nix template
+
+* Reveal.JS presentation Nix template
+
+This [[https://nixos.org/][Nix]] template contains a setup to quickly start creating presentations using
+[[https://revealjs.com/][Reveal.JS]], written in [[https://orgmode.org/][Org Mode]] and exported through [[https://www.gnu.org/software/emacs/][Emacs]].
+
+* Usage
+
+** Create a new project from template
+
+#+begin_src sh
+$ nix flake new -t github:myme/nix-templates#revealjs new-presenation
+#+end_src
+
+** Build
+
+#+begin_src sh
+$ nix build
+#+end_src
+
+** Serve
+
+#+begin_src sh
+$ nix run
+#+end_src
+
+** Development setup (with file-watching static web-server)
+
+#+begin_src sh
+$ nix develop
+$ start
+#+end_src

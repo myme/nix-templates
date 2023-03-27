@@ -20,4 +20,6 @@ Initialize a new `nodejs` project in `<destination>`:
 nix flake new <destination> -t github:myme/nix-templates#nodejs
 ```
 
+## [Reveal.JS](./revealjs)
 
+Build `Reveal.JS` presentations in `Org Mode` and `Emacs`.

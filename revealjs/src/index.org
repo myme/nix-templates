@@ -1,0 +1,11 @@
+#+title: Index
+#+OPTIONS: num:nil toc:nil
+#+REVEAL_VERSION: 4
+#+REVEAL_TITLE_SLIDE:
+
+* Hello, World!
+
+#+begin_src haskell
+main :: IO ()
+main = putStrLn "Hello, World!"
+#+end_src
