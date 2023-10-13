@@ -3,14 +3,16 @@
 
   outputs = { self }: {
 
-    haskell = {
-      path = ./haskell;
-      description = "Haskell based project";
-    };
+    templates = {
+      haskell = {
+        path = ./haskell;
+        description = "Haskell based project";
+      };
 
-    nodejs = {
-      path = ./nodejs;
-      description = "NodeJS based project";
+      nodejs = {
+        path = ./nodejs;
+        description = "NodeJS based project";
+      };
     };
 
     python = {
