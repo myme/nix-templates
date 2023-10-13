@@ -7,18 +7,20 @@
   };
 
   outputs = { self, nixpkgs, utils }:
-    let name = "hello";
-    in {
+    let
+      name = "hello";
       overlay = (final: prev: {
         haskellPackages = prev.haskellPackages // {
-          ${name} = prev.haskellPackages.callCabal2nix name ./. {};
+          ${name} = prev.haskellPackages.callCabal2nix name ./. { };
         };
       });
+    in {
+      inherit overlay;
     } // utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [ self.overlay ];
+          overlays = [ overlay ];
         };
       in {
         defaultPackage = pkgs.${name};
