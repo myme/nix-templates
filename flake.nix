@@ -13,16 +13,16 @@
         path = ./nodejs;
         description = "NodeJS based project";
       };
-    };
 
-    python = {
-      path = ./python;
-      description = "Python based project";
-    };
+      python = {
+        path = ./python;
+        description = "Python based project";
+      };
 
-    revealjs = {
-      path = ./revealjs;
-      description = "Build presentations in Reveal.js using Emacs Org Mode";
+      revealjs = {
+        path = ./revealjs;
+        description = "Build presentations in Reveal.js using Emacs Org Mode";
+      };
     };
 
   };
