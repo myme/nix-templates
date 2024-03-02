@@ -23,3 +23,7 @@ nix flake new <destination> -t github:myme/nix-templates#nodejs
 ## [Reveal.JS](./revealjs)
 
 Build `Reveal.JS` presentations in `Org Mode` and `Emacs`.
+
+## [Rust](./rust)
+
+A very basic `rust` based setup with `cargo`.

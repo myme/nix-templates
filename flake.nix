@@ -8,7 +8,6 @@
 
   outputs = { utils, ... }@inputs:
     {
-
       templates = {
         haskell = {
           path = ./haskell;
@@ -29,6 +28,11 @@
           path = ./revealjs;
           description = "Build presentations in Reveal.js using Emacs Org Mode";
         };
+
+        rust = {
+          path = ./rust;
+          description = "Rust base project";
+        };
       };
     } // utils.lib.eachDefaultSystem (system: {
       # Expose the various devShells
@@ -41,6 +45,8 @@
           ((import ./python/flake.nix).outputs inputs).devShell.${system};
         revealjs =
           ((import ./revealjs/flake.nix).outputs inputs).devShells.${system}.default;
+        rust =
+          ((import ./rust/flake.nix).outputs inputs).devShells.${system}.default;
       };
     });
 }
