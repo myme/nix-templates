@@ -9,6 +9,11 @@
   outputs = { utils, ... }@inputs:
     {
       templates = {
+        go = {
+          path = ./go;
+          description = "Go based project";
+        };
+
         haskell = {
           path = ./haskell;
           description = "Haskell based project";
