@@ -9,6 +9,11 @@
   outputs = { utils, ... }@inputs:
     {
       templates = {
+        cpp = {
+          path = ./cpp;
+          description = "C/C++ based project";
+        };
+
         go = {
           path = ./go;
           description = "Go based project";
@@ -42,6 +47,8 @@
     } // utils.lib.eachDefaultSystem (system: {
       # Expose the various devShells
       devShells = {
+        cpp =
+          ((import ./cpp/flake.nix).outputs inputs).devShell.${system};
         haskell =
           ((import ./haskell/flake.nix).outputs inputs).devShell.${system};
         nodejs =
