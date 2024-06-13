@@ -1,5 +1,6 @@
 #+title: Slix Slides
 #+OPTIONS: num:nil toc:nil
+#+PROPERTY: header-args :cache yes
 #+REVEAL_VERSION: 4
 #+REVEAL_TITLE_SLIDE:
 #+REVEAL_THEME: dracula
@@ -11,3 +12,80 @@
 * Slix Slides
 
 Hello, World! 👋
+
+#+begin_notes
+This is the title slide. Hello, World! 👋
+#+end_notes
+
+** Org-mode + Reveal.js = 💖
+
+=Slix= allows you to create presentation slides using [[https://revealjs.com/][Reveal.js]].
+
+* Text
+
+Plain text content is supported, with some support for basic text manipulation
+like /italics/, *bold*, _underlined_, and more...
+
+** Quotes
+
+#+begin_quote
+Add famous quotes!
+#+end_quote
+
+** Verbatim examples
+
+#+begin_example
+$ make
+emacs -Q --batch --script publish.el --funcall publish
+#+end_example
+
+** Source code blocks
+
+#+begin_src python
+print("Hello, World!")
+#+end_src
+
+* Media
+
+=Slix= support various media types.
+
+** Embed images
+
+[[file:color-waves.webp]]
+
+** And even videos
+
+* Org Babel integration
+
+Through [[https://orgmode.org/worg/org-contrib/babel/][Babel]] it's possible to inline source code and evaluate it on the fly.
+This is great for ensuring that code blocks stay valid (and much more).
+
+** Flow charts using [[https://mermaid.js.org/][Mermaid]]
+
+#+begin_src mermaid :exports both :file flowchart.png
+flowchart LR
+    Start --> Stop
+#+end_src
+
+#+RESULTS[6081c52a234ec37612c2b665509cb5524e5e7d6c]:
+[[file:flowchart.png]]
+
+#+begin_notes
+[[https://mermaid.js.org/][Mermaid]] allows generating a wide variety of flow charts and diagrams using text.
+#+end_notes
+
+** Highlighted source code
+
+Write inline code and evaluate it when generating slides:
+
+#+begin_src python :exports both :results output
+print("Hello, World!")
+#+end_src
+
+#+RESULTS[e12a9e09ada272b5261aae41c979df86b834c12b]:
+: Hello, World!
+
+#+begin_notes
+Babel has the ability of executing source code blocks as long as the required
+interpreters are available in ~$PATH~.
+#+end_notes

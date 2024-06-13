@@ -45,6 +45,8 @@
         devShells.default = pkgs.mkShell {
           REVEALJS = revealjs;
           buildInputs = [
+            pkgs.python3
+
             revealjs
             # Start a development server using `start`
             (pkgs.writeShellScriptBin "start" ''

@@ -31,7 +31,8 @@
   ;; Org Babel
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((mermaid . t)))
+   '((mermaid . t)
+     (python . t)))
   (setq org-confirm-babel-evaluate nil)
   (setq org-export-use-babel t)
   ;; Org Publish
@@ -48,7 +49,7 @@
           ("static"
            :base-directory "src"
            :publishing-directory "slides"
-           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|svg\\|pdf\\|mp3\\|ogg\\|swf\\|webm"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|svg\\|pdf\\|mp3\\|ogg\\|swf\\|webm\\|webp"
            :exclude ".\\*site$"
            :recursive t
            :publishing-function org-publish-attachment)))
