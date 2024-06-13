@@ -14,7 +14,7 @@
 Hello, World! 👋
 
 #+begin_notes
-This is the title slide. Hello, World! 👋
+These are speaker notes and this is the title slide. Hello, World! 👋
 #+end_notes
 
 ** Org-mode + Reveal.js = 💖
@@ -24,7 +24,12 @@ This is the title slide. Hello, World! 👋
 * Text
 
 Plain text content is supported, with some support for basic text manipulation
-like /italics/, *bold*, _underlined_, and more...
+like:
+
+ - /italics/
+ - *bold*
+ - _underlined_
+ - and more...
 
 ** Quotes
 
