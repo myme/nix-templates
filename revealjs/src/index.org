@@ -55,6 +55,12 @@ print("Hello, World!")
 
 ** And even videos
 
+#+begin_export  html
+<video controls data-autoplay>
+  <source src="hello-python.webm" type="video/webm">
+</video>
+#+end_export
+
 * Org Babel integration
 
 Through [[https://orgmode.org/worg/org-contrib/babel/][Babel]] it's possible to inline source code and evaluate it on the fly.
