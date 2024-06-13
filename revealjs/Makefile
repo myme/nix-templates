@@ -2,10 +2,11 @@
 # Reveal.JS Org Mode presentations
 #
 
+EMACS := emacs
 SLIDES := ./slides
 
 slides: $(SLIDES)/reveal.js
-	emacs -Q --batch --script publish.el --funcall publish
+	$(EMACS) -Q --batch --script publish.el --funcall publish
 
 $(SLIDES)/reveal.js:
 	mkdir -p $(SLIDES)

@@ -2,20 +2,32 @@
   description = "Build presentations in Reveal.js using Emacs Org Mode";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, utils, ... }:
+  outputs = { nixpkgs, utils, ... }:
     utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        emacs = pkgs.emacsWithPackages (epkgs: [ epkgs.org-re-reveal ]);
+        emacs-pkg = pkgs.emacsWithPackages (epkgs: [
+          epkgs.doom-themes
+          epkgs.htmlize
+          epkgs.ob-mermaid
+          epkgs.org-re-reveal
+        ]);
+
+        slixmacs = pkgs.writeShellScriptBin "slixmacs" ''
+          ${emacs-pkg}/bin/emacs -Q "$@"
+        '';
 
         # Reveal.js with "dracula" theme
         revealjs = pkgs.nodePackages."reveal.js";
 
-        slides = pkgs.callPackage ./slides.nix { inherit emacs revealjs; };
+        slides = pkgs.callPackage ./slides.nix {
+          inherit revealjs;
+          emacs = emacs-pkg;
+        };
 
       in {
         # Build and serve slide: `nix run`
@@ -33,14 +45,13 @@
         devShells.default = pkgs.mkShell {
           REVEALJS = revealjs;
           buildInputs = [
-            emacs
             revealjs
             # Start a development server using `start`
             (pkgs.writeShellScriptBin "start" ''
               mkdir -p slides
               ${pkgs.hivemind}/bin/hivemind - <<EOF
               serve: ${pkgs.ran}/bin/ran --root ./slides
-              watch: ${pkgs.watchexec}/bin/watchexec -e org make
+              watch: ${pkgs.watchexec}/bin/watchexec -e org make EMACS=${slixmacs}/bin/slixmacs
               EOF
             '')
           ];

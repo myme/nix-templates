@@ -1,11 +1,13 @@
-#+title: Index
+#+title: Slix Slides
 #+OPTIONS: num:nil toc:nil
 #+REVEAL_VERSION: 4
 #+REVEAL_TITLE_SLIDE:
+#+REVEAL_THEME: dracula
+#+REVEAL_PLUGINS: (highlight notes zoom)
+#+REVEAL_EXTRA_CSS: ./styles.css
+#+REVEAL_HIGHLIGHT_CSS: ./dracula.css
+#+REVEAL_TRANS: slide
 
-* Hello, World!
+* Slix Slides
 
-#+begin_src haskell
-main :: IO ()
-main = putStrLn "Hello, World!"
-#+end_src
+Hello, World! 👋
