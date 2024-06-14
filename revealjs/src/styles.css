@@ -1,5 +1,4 @@
-.src {
-    padding: 1.5em;
+.hljs, .src {
+    padding: 1em !important;
     border-radius: 0.5em;
-    background-color: #271e34;
 }
