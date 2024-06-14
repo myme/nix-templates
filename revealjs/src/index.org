@@ -50,6 +50,25 @@ emacs -Q --batch --script publish.el --funcall publish
 print("Hello, World!")
 #+end_src
 
+* Fragmented content
+
+=Reveal.js= supports /fragmented content/ for various text element.
+
+** Paragraphs
+
+#+ATTR_REVEAL: :frag t
+This paragraph will appear first.
+
+#+ATTR_REVEAL: :frag t
+This paragraph will appear second.
+
+** Lists
+
+#+ATTR_REVEAL: :frag t
+- List item 1
+- List item 2
+- List item 3
+
 * Media
 
 =Slix= support various media types.
